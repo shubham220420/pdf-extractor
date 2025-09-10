@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "src/index.ts"
+    }
+  ],
+  "env": {
+    "MONGODB_URI": "@mongodb_uri",
+    "GEMINI_API_KEY": "@gemini_api_key",
+    "GROQ_API_KEY": "@groq_api_key",
+    "BLOB_READ_WRITE_TOKEN": "@blob_read_write_token",
+    "FRONTEND_URL": "https://your-frontend-url.vercel.app"
+  }
+}
