@@ -21,7 +21,7 @@ app.use(helmet());
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production' 
     ? [
-        'https://pdf-invoice-dashboard.vercel.app',
+        'https://pdf-extractor-1-git-main-shubhams-projects-7c2c26d2.vercel.app/',
         ...(process.env.CORS_ORIGIN ? [process.env.CORS_ORIGIN] : []),
         ...(process.env.FRONTEND_URL ? [process.env.FRONTEND_URL] : [])
       ]
