@@ -19,13 +19,7 @@ app.use(helmet());
 
 // CORS configuration for production
 const corsOptions = {
-  origin: process.env.NODE_ENV === 'production' 
-    ? [
-        'https://pdf-extractor-1-git-main-shubhams-projects-7c2c26d2.vercel.app/',
-        ...(process.env.CORS_ORIGIN ? [process.env.CORS_ORIGIN] : []),
-        ...(process.env.FRONTEND_URL ? [process.env.FRONTEND_URL] : [])
-      ]
-    : ['http://localhost:3000', 'http://localhost:3001'],
+  origin: 'https://pdf-extractor-1-git-main-shubhams-projects-7c2c26d2.vercel.app',
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
