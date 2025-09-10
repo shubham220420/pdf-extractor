@@ -4,7 +4,7 @@ A modern, AI-powered PDF invoice extraction and management system built with Nex
 
 ![PDF Invoice Dashboard](https://img.shields.io/badge/Version-1.0.0-blue.svg)
 ![Next.js](https://img.shields.io/badge/Next.js-15.5.2-black.svg)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-blue.svg)
 ![MongoDB](https://img.shields.io/badge/MongoDB-Latest-green.svg)
 
 ## 🚀 Live Demo
@@ -137,6 +137,15 @@ NEXT_PUBLIC_API_URL=http://localhost:3001/api
 - `POST /api/invoices` - Create new invoice
 - `PUT /api/invoices/:id` - Update invoice
 - `DELETE /api/invoices/:id` - Delete invoice
+
+#### PDF Conversion
+- `POST /api/pdf-convert` - Convert PDF to images or other formats
+  - Body: `{ fileId: string, format: string }`
+  - Response: `{ success: true, data: { convertedFileUrl } }`
+
+#### Health Check
+- `GET /api/health` - Check server health
+  - Response: `{ status: 'OK', timestamp: string }`
 
 ### Sample Request/Response
 
