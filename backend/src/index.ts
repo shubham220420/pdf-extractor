@@ -22,7 +22,6 @@ const corsOptions = {
   origin: process.env.NODE_ENV === 'production' 
     ? [
         'https://pdf-invoice-dashboard.vercel.app',
-        'https://pdf-extractor-1-git-main-shubhams-projects-7c2c26d2.vercel.app', // add this
         ...(process.env.CORS_ORIGIN ? [process.env.CORS_ORIGIN] : []),
         ...(process.env.FRONTEND_URL ? [process.env.FRONTEND_URL] : [])
       ]
@@ -32,13 +31,12 @@ const corsOptions = {
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
 };
 
-
 app.use(cors(corsOptions));
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 // Database connection
-mongoose.connect(process.env.MONGODB_URI )
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/pdf-dashboard')
   .then(() => console.log('✅ MongoDB connected'))
   .catch((err) => console.error('❌ MongoDB connection error:', err));
 
